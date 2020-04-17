@@ -1,0 +1,8 @@
+
+
+
+Add repos and https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(Native-GPU-Support)
+Run docker run --gpus all nvidia/cuda nvidia-smi to test
+F@H GPU instructions are here https://github.com/FoldingAtHome/containers/tree/master/fah-gpu
+
+
