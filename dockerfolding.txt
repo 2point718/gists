@@ -28,3 +28,10 @@ config.xml sample
   <web-allow>127.0.0.1</web-allow>
 </config>
 
+to view logs
+docker logs fah0
+
+to tail logs
+docker logs -f fah0
+
+the file is available in the volume as well
