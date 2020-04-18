@@ -5,4 +5,7 @@ Add repos and https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(Native-
 Run docker run --gpus all nvidia/cuda nvidia-smi to test
 F@H GPU instructions are here https://github.com/FoldingAtHome/containers/tree/master/fah-gpu
 
-
+to fix socket permission error for docker run 
+add the user to the docker group and then switch to it
+sudo usermod -a -G docker username
+newgrp docker
