@@ -7,9 +7,29 @@ F@H GPU instructions are here https://github.com/FoldingAtHome/containers/tree/m
 
 to fix socket permission error for docker run 
 add the user to the docker group and then switch to it
-sudo usermod -a -G docker username
-newgrp docker
-docker run --gpus all --name fah0 -d --user "$(id -u):$(id -g)" --volume /path_to_disk/projects/fah:/fah foldingathome/fah-gpu:7.5.1-rc1
+
+$ sudo usermod -a -G docker username
+$ newgrp docker
+
+create new container
+$ docker run --gpus all --name fah0 -d --user "$(id -u):$(id -g)" --volume /path_to_disk/projects/fah:/fah foldingathome/fah-gpu:7.5.1-rc1
+
+shutdown
+$ docker exec fah0 FAHClient --send-command shutdown
+
+start again
+$ docker start fah0
+
+to view logs
+$ docker logs fah0
+
+to tail logs
+$ docker logs -f fah0
+
+the log file is available in the volume as well
+
+docker run -> AE app run -> creates new container with the name and runs it
+docker start -> AE app update -> re-run the container
 
 config.xml sample
 
@@ -22,16 +42,12 @@ config.xml sample
   <team v='0'/>
   <slot id='0' type='CPU'/>
   <slot id='1' type='GPU'>
-	<extra-core-args v=’-tmax=80 -twait=900’/>
+	<extra-core-args v='-tmax=80 -twait=900'/>
   </slot>
   <allow>127.0.0.1</allow>
   <web-allow>127.0.0.1</web-allow>
 </config>
 
-to view logs
-docker logs fah0
 
-to tail logs
-docker logs -f fah0
 
-the file is available in the volume as well
+
