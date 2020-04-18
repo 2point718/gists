@@ -9,3 +9,22 @@ to fix socket permission error for docker run
 add the user to the docker group and then switch to it
 sudo usermod -a -G docker username
 newgrp docker
+docker run --gpus all --name fah0 -d --user "$(id -u):$(id -g)" --volume /path_to_disk/projects/fah:/fah foldingathome/fah-gpu:7.5.1-rc1
+
+config.xml sample
+
+<config>
+  <fold-anon v='false'/>
+  <gpu v='true'/>
+  <power v='full'/>
+  <user v='enter user id here'/>
+  <passkey v='enter passkey here'/>
+  <team v='0'/>
+  <slot id='0' type='CPU'/>
+  <slot id='1' type='GPU'>
+	<extra-core-args v=’-tmax=80 -twait=900’/>
+  </slot>
+  <allow>127.0.0.1</allow>
+  <web-allow>127.0.0.1</web-allow>
+</config>
+
