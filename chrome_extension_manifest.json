@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "Custom Local RM Style",
+  "description": "Custom Local RM Style",
+  "version": "0.1",
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["rm-style.css"],
+    "js": ["rm-style.js"],
+    "run_at": "document_start"
+  }]
+}
