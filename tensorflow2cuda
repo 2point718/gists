@@ -1,0 +1,21 @@
+https://github.com/tensorflow/tensorflow/issues/38578
+
+to make tensorflow 
+
+		<dependency>
+			<groupId>org.tensorflow</groupId>
+			<artifactId>tensorflow-core-api</artifactId>
+			<version>0.2.0</version>
+			<classifier>linux-x86_64-gpu</classifier>
+		</dependency>
+
+work with cuda 10.2
+
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcudart.so.10.2 /usr/lib/x86_64-linux-gnu/libcudart.so.10.1
+
+after that it is able to detect and use the GPU
+
+external/org_tensorflow/tensorflow/core/common_runtime/gpu/gpu_device.cc:1402]
+Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5078 MB memory)
+-> physical GPU (device: 0, name: GeForce RTX 2060, compute capability: 7.5)
+
