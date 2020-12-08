@@ -33,3 +33,9 @@ sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcurand.so.10 /usr/li
 sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcusolver.so.10 /usr/lib/x86_64-linux-gnu/libcusolver.so.10.0
 sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcusparse.so.10 /usr/lib/x86_64-linux-gnu/libcusparse.so.10.0
 sudo ln -s /usr/lib/x86_64-linux-gnu/libcublas.so.10.2.2.89 /usr/lib/x86_64-linux-gnu/libcublas.so.10.0 
+
+
+-----------------------------------------
+for i in *.wav; do ffmpeg -i "$i" "${i%.*}.mp3"; done
+
+
