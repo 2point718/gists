@@ -19,3 +19,17 @@ external/org_tensorflow/tensorflow/core/common_runtime/gpu/gpu_device.cc:1402]
 Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5078 MB memory)
 -> physical GPU (device: 0, name: GeForce RTX 2060, compute capability: 7.5)
 
+
+---------------- for SV2TTS 
+sudo apt-get install python3.7
+sudo apt-get install python3.7-dev
+python3.7 -m pip install pip
+python3.7 -m pip  install -r requirements.txt
+python3.7 -m pip  install -r requirements_gpu.txt
+
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcudart.so.10.2 /usr/lib/x86_64-linux-gnu/libcudart.so.10.0
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcufft.so.10 /usr/lib/x86_64-linux-gnu/libcufft.so.10.0
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcurand.so.10 /usr/lib/x86_64-linux-gnu/libcurand.so.10.0
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcusolver.so.10 /usr/lib/x86_64-linux-gnu/libcusolver.so.10.0
+sudo ln -s /usr/local/cuda-10.2/targets/x86_64-linux/lib/libcusparse.so.10 /usr/lib/x86_64-linux-gnu/libcusparse.so.10.0
+sudo ln -s /usr/lib/x86_64-linux-gnu/libcublas.so.10.2.2.89 /usr/lib/x86_64-linux-gnu/libcublas.so.10.0 
