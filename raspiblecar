@@ -1,0 +1,43 @@
+picar
+
+install libglib2.0-dev cmake
+
+https://github.com/intel-iot-devkit/tinyb/issues/163
+
+
+~/projects/tinyb/build $ export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/
+~/projects/tinyb/build $ cmake -DBUILDJAVA=ON ..
+
+-- Installing: /usr/local/lib/../lib/java/tinyb.jar
+-- Installing: /usr/local/lib/libtinyb.so
+
+pi bluetoothctl without root 
+
+sudo nano /etc/dbus-1/system.d/bluetooth.conf
+ <policy user="pi">
+  ... https://www.raspberrypi.org/forums/viewtopic.php?t=108581
+ </policy>
+ 
+rfkill list
+0: phy0: Wireless LAN
+	Soft blocked: no
+	Hard blocked: no
+1: hci0: Bluetooth
+	Soft blocked: yes
+	Hard blocked: no
+
+rfkill unblock bluetooth
+
+bluetoothctl
+  show
+    --> powered: yes
+    
+forward/backward
+steer
+light
+
+java -Djava.library.path=/usr/local/lib -jar picar.jar
+
+host:8080/picar/
+
+    
