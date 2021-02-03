@@ -1,0 +1,9 @@
+if there is a shutdown in the middle of r package installations there can be weird errors that follow
+
+error in readrds(nsinfofilepath) error reading from connection
+
+the lock files need to be removed along with removing size 0 files as mentioned below
+
+https://stackoverflow.com/questions/6473831/readrdsfile-in-r/17448816#17448816
+
+find . -iname '*rds' -a -size 0
