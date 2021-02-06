@@ -40,4 +40,10 @@ java -Djava.library.path=/usr/local/lib -jar picar.jar
 
 host:8080/picar/
 
-    
+ondemad cpu frequency governor causing shutdowns due to overheat
+apt install cpufrequtils
+set max limit
+sudo cpufreq-set -u 2Ghz
+defaults are in file /etc/default/cpufrequtils
+GOVERNOR="powersave"
+MAX_SPEED="2GHz"
